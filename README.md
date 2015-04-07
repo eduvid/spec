@@ -34,69 +34,83 @@ Eduvid may contains multiple streams. types of streams are different. Following 
 Eduvid files are .zip file. everything is zipped. Entry file is index.json. Index.json file contains various informations related to format, media and timings.
 
 # Initial attempt
-
 ```json
 {
-  "format": {
-      "type": "eduvid",
-      "version":"1.0.0"
-  },
-
-  "type" : {
-      "seekBarType" : "video / audio / slideshow /  scrollbar",
-      "seekBarMedia": "media[2]",
-      "length / steps": "230000"
-  },
-
-  "media" :[
-    {
-          "type":"pdf",
-          "src": "./myslide.pdf"
-    },{
-          "type":"image",
-          "src": "./img/1.png"
-    },{
-      "type":"audio",
-      "src" : "voice1.ogg"
-    },{
-      "type":"video",
-      "src" : "lecture2.ogv"
-    },{
-      "type":"html",
-      "src":"#slide2"
-    },{
-      "type":"iframe",
-      "src": "./html/1.html"
-    },{
-      "type":"svg",
-      "src": "./svg/1.svg"
-    }],
-"layout": {},
-"transition": {
-    "0": {
-        "show": "media[0]#1"
+    "format": {
+        "type": "eduvid",
+        "version": "1.0.0"
     },
-    "20000": {
-        "show": "media[0]#2"
+    "type": {
+        "seekBarType": "video / audio / slideshow /  scrollbar",
+        "seekBarMedia": "media[2]",
+        "length": "0:0:60:0"
     },
-    "50000": {
-        "show": "media[0]#3",
-        "effect" : {
-            "in": "fadeIn",
-            "inDuration": "100ms",
-            "out": "fadeOut",
-            "outDuration": "200ms"    
+    "media": [
+        {
+            "type": "pdf",
+            "src": "myslide.pdf"
+        },
+        {
+            "type": "imageDir",
+            "src": "img"
+        },
+        {
+            "type": "audio",
+            "src": "voice1.ogg"
+        },
+        {
+            "type": "video",
+            "src": "lecture2.ogv"
+        },
+        {
+            "type": "html",
+            "src": "#slide2"
+        },
+        {
+            "type": "iframe",
+            "src": "./html/1.html"
+        },
+        {
+            "type": "svg",
+            "src": "./svg/1.svg"
         }
-    },
-    "80000": {
-        "show": "media[1]"
-    },
-    "120000": {
-        "show": "media[0]#5"
-    }
-  }
+    ],
+    "layout": {},
+    "events": [
+        {
+            "time": "0:0:0:0",
+            "show": "media[0]#1"
+        },
+        {
+            "time": "0:0:2:0",
+            "show": "media[0]#2"
+        },
+        {
+            "time": "0:0:5:0",
+            "show": "media[0]#3",
+            "effect": {
+                "in": "fadeIn",
+                "inDuration": "100ms",
+                "out": "fadeOut",
+                "outDuration": "-200ms"
+            }
+        },
+        {
+            "time": "0:0:10:0",
+            "show": "media[1]#nature.png"
+        },
+        {
+            "time": "0: 0: 12: 0",
+            "show": "media[0]#5"
+        }
+    ]
 }
 ```
+
+# Todo
+* How to specify z index ? There can be multiple media on screen at the same time.
+* SVG scribble to be included inside format.
+* Add S5 or html5rocks slides in the format.
 
 
 
