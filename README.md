@@ -9,15 +9,13 @@ for digital contents with text, images, audio and video and animation.
 
 # Goals
 
-The goal is to re-form education in third world countries and developing nations which still do
-not have proper education.
-The goal is to take benefit from tremendous “creativity and knowledge” of students/teachers
-and share among other students. We need not to find good teacher to educate students. All we
+The goal is to re-form education using digital content. mainling slicecasting.
+The goal is to take benefit from tremendous "creativity and knowledge" of students and 
+share this knowledge among other students. We need not to find good teacher to educate students. All we
 need to find good students and empower them with “Eduvid Platform” so that they can
 “easily” create and share and modify “educational contents”
 The Goal is to remove/reduce barriers in “creating and sharing and modifying educational
 contents”
-
 
 # Format 
 
@@ -106,6 +104,14 @@ Eduvid files are .zip file. everything is zipped. Entry file is index.json. Inde
     ]
 }
 ```
+
+# Convension
+
+* What is ```media[1]#nature.png``` ?
+* * media Array's second index ([1]) is type imageDir, so it is basically "./img/nature.png"
+* What is ```{"time": "0:0:2:0", "show": "media[0]#2"}```
+* * 0 index represent pdf file. So ```media[0]#2``` basically means, ```Show Page number 2 of myslide.pdf at Time equal to 2 second```
+
 
 # Todo
 * How to specify z index ? There can be multiple media on screen at the same time.
