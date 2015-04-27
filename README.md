@@ -108,11 +108,11 @@ Eduvid files are .zip file. everything is zipped. Entry file is index.json. Inde
 # Convension
 
 * What is ```1#nature.png``` ?
-* * media Array's second index ([1]) is type imageDir, so it is basically "./img/nature.png"
+** media Array's second index ([1]) is type imageDir, so it is basically "./img/nature.png"
 * What is ```{"time": "0:0:3:0", "show": "0#2"}```
-* * 0 index represent pdf file. So ```0#2``` basically means, ```Show Page number 2 of myslide.pdf at Time equal to 3 second```
+** 0 index represent pdf file. So ```0#2``` basically means, ```Show Page number 2 of myslide.pdf at Time equal to 3 second```
 * ```0:0:60:0``` format ?
-* * Hour:Minute:Second:Millisecond
+** Hour:Minute:Second:Millisecond
 
 # Todo
 * How to specify z index ? There can be multiple media on screen at the same time.
