@@ -36,11 +36,11 @@ Eduvid files are .zip file. everything is zipped. Entry file is index.json. Inde
 {
     "format": {
         "type": "eduvid",
-        "version": "1.0.0"
+        "version": "1.0.1"
     },
     "type": {
         "seekBarType": "video / audio / slideshow /  scrollbar",
-        "seekBarMedia": "media[2]",
+        "seekBarMediaIndex": 2,
         "length": "0:0:60:0"
     },
     "media": [
@@ -77,15 +77,15 @@ Eduvid files are .zip file. everything is zipped. Entry file is index.json. Inde
     "events": [
         {
             "time": "0:0:0:0",
-            "show": "media[0]#1"
+            "show": "0#1"
         },
         {
-            "time": "0:0:2:0",
-            "show": "media[0]#2"
+            "time": "0:0:3:0",
+            "show": "0#2"
         },
         {
             "time": "0:0:5:0",
-            "show": "media[0]#3",
+            "show": "0#3",
             "effect": {
                 "in": "fadeIn",
                 "inDuration": "100ms",
@@ -95,11 +95,11 @@ Eduvid files are .zip file. everything is zipped. Entry file is index.json. Inde
         },
         {
             "time": "0:0:10:0",
-            "show": "media[1]#nature.png"
+            "show": "1#nature.png"
         },
         {
             "time": "0: 0: 12: 0",
-            "show": "media[0]#5"
+            "show": "0#5"
         }
     ]
 }
@@ -107,11 +107,12 @@ Eduvid files are .zip file. everything is zipped. Entry file is index.json. Inde
 
 # Convension
 
-* What is ```media[1]#nature.png``` ?
+* What is ```1#nature.png``` ?
 * * media Array's second index ([1]) is type imageDir, so it is basically "./img/nature.png"
-* What is ```{"time": "0:0:2:0", "show": "media[0]#2"}```
-* * 0 index represent pdf file. So ```media[0]#2``` basically means, ```Show Page number 2 of myslide.pdf at Time equal to 2 second```
-
+* What is ```{"time": "0:0:3:0", "show": "0#2"}```
+* * 0 index represent pdf file. So ```0#2``` basically means, ```Show Page number 2 of myslide.pdf at Time equal to 3 second```
+* ```0:0:60:0``` format ?
+* * Hour:Minute:Second:Millisecond
 
 # Todo
 * How to specify z index ? There can be multiple media on screen at the same time.
